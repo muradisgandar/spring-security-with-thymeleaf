@@ -27,6 +27,9 @@ public class User {
     @Basic(optional = false)
     @Column(name = "password")
     private String password;
+    @Basic(optional = false)
+    @Column(name = "email")
+    private String email;
     private int active;
     private String roles;
     private String permissions;
@@ -93,6 +96,15 @@ public class User {
     public void setPermissions(String permissions) {
         this.permissions = permissions;
     }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+    
     
     public List<String> getRolesList(){
         if(this.roles.length()>0){

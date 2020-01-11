@@ -34,7 +34,6 @@ public class CustomUserDetailServiceImpl implements UserDetailsService{
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 
         User user = userDataInter.findByUsername(username);
-
         List<GrantedAuthority> roles = new ArrayList<>();
         
         user.getRolesList().forEach(p ->{

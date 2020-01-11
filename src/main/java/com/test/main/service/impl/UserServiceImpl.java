@@ -20,10 +20,9 @@ public class UserServiceImpl implements UserServiceInter{
     UserDataInter userDataInter;
     
     @Override
-    public User findByUsername(String username) {
+    public User findByEmail(String username) {
         return userDataInter.findByUsername(username);
         
     }
-    
     
 }

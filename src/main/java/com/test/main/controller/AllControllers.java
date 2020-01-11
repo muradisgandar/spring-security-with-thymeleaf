@@ -5,12 +5,8 @@
  */
 package com.test.main.controller;
 
-import com.test.main.dao.UserDataInter;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 /**
@@ -26,21 +22,33 @@ public class AllControllers {
         return modelAndView;
     }
     
-    @GetMapping("/admin")
+    @GetMapping("/logout")
+    public ModelAndView logout(ModelAndView modelAndView) {
+        modelAndView.setViewName("login");
+        return modelAndView;
+    }
+    
+    @GetMapping("/index")
+    public ModelAndView index(ModelAndView modelAndView) {
+        modelAndView.setViewName("index");
+        return modelAndView;
+    }
+    
+    @GetMapping("/index/admin")
     public ModelAndView admin(ModelAndView modelAndView) {
-        modelAndView.setViewName("login");
+        modelAndView.setViewName("admin");
         return modelAndView;
     }
     
-    @GetMapping("/manager")
+    @GetMapping("/index/manager")
     public ModelAndView manager(ModelAndView modelAndView) {
-        modelAndView.setViewName("login");
+        modelAndView.setViewName("manager");
         return modelAndView;
     }
     
-    @GetMapping("/user")
+    @GetMapping("/index/user")
     public ModelAndView user(ModelAndView modelAndView) {
-        modelAndView.setViewName("login");
+        modelAndView.setViewName("user");
         return modelAndView;
     }
     

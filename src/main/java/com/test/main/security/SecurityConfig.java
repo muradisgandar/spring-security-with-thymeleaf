@@ -45,11 +45,13 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http
                 .authorizeRequests()
                 .antMatchers("/login").permitAll()
-                .antMatchers("/admin").hasAnyAuthority("ADMIN")
-                .antMatchers("/user").hasAnyAuthority("USER")
-                .antMatchers("/manager").hasAnyAuthority("MANAGER")
-                .and().formLogin().loginPage("/login").loginProcessingUrl("/login").defaultSuccessUrl("/",true)
-                .and().logout().logoutSuccessUrl("/")
+                .antMatchers("/index").permitAll()
+                .antMatchers("/index/admin").hasAnyAuthority("ADMIN")
+                .antMatchers("/index/user").hasAnyAuthority("USER")
+                .antMatchers("/index/manager").hasAnyAuthority("MANAGER")
+                .and().formLogin().loginPage("/login").defaultSuccessUrl("/index",true)
+                .failureUrl("/login?error=true")
+                .and().logout().logoutSuccessUrl("/login")
                 .and().csrf().disable();
         
     }
