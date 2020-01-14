@@ -13,5 +13,5 @@ import com.test.main.entity.User;
  */
 public interface UserServiceInter {
     
-    public User findByEmail(String email);
+     User findByEmail(String email);
 }

@@ -6,7 +6,7 @@
 package com.test.main.dao;
 
 import com.test.main.entity.User;
-import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 /**
@@ -14,11 +14,10 @@ import org.springframework.stereotype.Repository;
  * @author murad_isgandar
  */
 @Repository
-public interface UserDataInter extends CrudRepository<User, Integer>{
+public interface UserDataInter extends JpaRepository<User, Integer> {
+
+//    User findByUsername(String username);
     
-    
-    User findByUsername(String username);
-    
-    
-    
+     User findByEmail(String email);
+
 }

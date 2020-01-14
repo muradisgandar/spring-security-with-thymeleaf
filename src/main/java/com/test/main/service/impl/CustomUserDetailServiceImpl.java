@@ -31,9 +31,9 @@ public class CustomUserDetailServiceImpl implements UserDetailsService{
     private UserDataInter userDataInter;
 
     @Override
-    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+    public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
 
-        User user = userDataInter.findByUsername(username);
+        User user = userDataInter.findByEmail(email);
         List<GrantedAuthority> roles = new ArrayList<>();
         
         user.getRolesList().forEach(p ->{

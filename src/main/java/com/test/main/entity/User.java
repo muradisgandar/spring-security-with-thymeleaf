@@ -30,6 +30,7 @@ public class User {
     @Basic(optional = false)
     @Column(name = "email")
     private String email;
+    @Column(name = "active")
     private int active;
     private String roles;
     private String permissions;
@@ -40,14 +41,17 @@ public class User {
         
     }
 
-    
-    public User(String username, String password, String roles, String permissions) {
+    public User(String username, String password, String email, int active, String roles, String permissions) {
         this.username = username;
         this.password = password;
+        this.email = email;
+        this.active = active;
         this.roles = roles;
         this.permissions = permissions;
-        this.active = active;
     }
+
+    
+    
 
     public long getId() {
         return id;
